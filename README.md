@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+Here's a basic `README.md` file for your project. You can customize it further based on your specific needs and project details.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# YellowSense Job Application
 
-In the project directory, you can run:
+## Overview
 
-### `npm start`
+YellowSense is a job application platform that allows users to browse job listings, bookmark their favorite jobs, and view detailed information about each job. The application features a job search functionality and a bookmark management system. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Job Listings**: View a list of job postings with details such as title, location, salary, and contact information.
+- **Bookmark Jobs**: Bookmark jobs to save them for later.
+- **Search Functionality**: Search for jobs based on title or other criteria.
+- **Job Details**: View detailed information about a specific job.
+- **Bookmarks Management**: Manage your bookmarked jobs and navigate to job details from your bookmarks.
 
-### `npm test`
+## Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone the repository:
 
-### `npm run build`
+   
+   git clone https://github.com/JayaramHarry/YellowSenseTechnologies.git
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Navigate to the project directory:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   
+   cd yellowsense
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Install the dependencies:
 
-### `npm run eject`
+   
+   npm install
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Usage
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Start the development server:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   
+   npm start
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. Open your browser and navigate to `http://localhost:3000` to view the application.
 
-## Learn More
+## Project Structure
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **`src`**: Contains the source code for the application.
+  - **`components`**: Contains React components for the application.
+    - **`Jobs.js`**: Displays the list of jobs and handles job bookmarking.
+    - **`Bookmarks.js`**: Displays bookmarked jobs and allows removal of bookmarks.
+    - **`JobDetails.js`**: Shows detailed information about a job.
+  - **`App.js`**: Main application component that sets up routing and handles global state.
+  - **`App.css`**: Styles for the application.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Dependencies
 
-### Code Splitting
+- **`react`**: A JavaScript library for building user interfaces.
+- **`react-dom`**: Serves as the entry point to the DOM and server renderers.
+- **`react-router-dom`**: Declarative routing for React.js.
+- **`axios`**: Promise-based HTTP client for making API requests.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Contributing
 
-### Analyzing the Bundle Size
+If you'd like to contribute to this project, please follow these steps:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. Fork the repository.
+2. Create a new branch for your changes.
+3. Commit your changes and push them to your fork.
+4. Open a pull request to merge your changes into the main repository.
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Thank you for using YellowSense! We hope you find it useful.
