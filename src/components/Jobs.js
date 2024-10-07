@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
@@ -98,46 +97,40 @@ const Jobs = ({ onBookmark, bookmarks = [], searchQuery }) => {
     preventDefaultTouchmoveEvent: true,
   });
 
-  const handleJobCardClick = (index) => {
-    setCurrentIndex(index); // Set clicked job as current job
-  };
-
   return (
     <div className="jobs-container">
       {error && <p className="error-text">{error}</p>}
       {filteredJobs.length === 0 && !loading && <p className="empty-text">No jobs available.</p>}
       <div className="job-display" {...swipeHandlers}>        
-          {filteredJobs.length > 0 && (
-            <div className="job-card collapsed" key={filteredJobs[currentIndex].id}>
-              <h2>{filteredJobs[currentIndex].title}</h2>
-              <div className="job-details">
-                <p className="job-place">Location: {filteredJobs[currentIndex].primary_details?.Place || 'N/A'}</p>
-                <p className="job-salary">Salary: {filteredJobs[currentIndex].primary_details?.Salary || 'N/A'}</p>
-                <p className="job-phone">Phone: {filteredJobs[currentIndex].whatsapp_no || 'N/A'}</p>
-              </div>
-              <button
-                className={`bookmark-btn ${isBookmarked(filteredJobs[currentIndex].id) ? 'bookmarked' : ''}`}
-                onClick={(e) => {
-                  e.stopPropagation(); // Prevent click from triggering job card click
-                  onBookmark(filteredJobs[currentIndex]);
-                  setNotification(isBookmarked(filteredJobs[currentIndex].id) ? 'Removed from bookmarks!' : 'Saved successfully!'); // Set notification message
-                  setTimeout(() => setNotification(''), 3000); // Clear notification after 3 seconds
-                }}
-              >
-                 
-                {isBookmarked(filteredJobs[currentIndex].id) ? 'Bookmarked' : 'Bookmark'}
-              </button>
-              <Link to={`/jobs/${filteredJobs.id}`} className="view-details-btn">View Details</Link>
+        {filteredJobs.length > 0 && (
+          <div className="job-card collapsed" key={filteredJobs[currentIndex].id}>
+            <h2>{filteredJobs[currentIndex].title}</h2>
+            <div className="job-details">
+              <p className="job-place">Location: {filteredJobs[currentIndex].primary_details?.Place || 'N/A'}</p>
+              <p className="job-salary">Salary: {filteredJobs[currentIndex].primary_details?.Salary || 'N/A'}</p>
+              <p className="job-phone">Phone: {filteredJobs[currentIndex].whatsapp_no || 'N/A'}</p>
             </div>
-          )}
+            <button
+              className={`bookmark-btn ${isBookmarked(filteredJobs[currentIndex].id) ? 'bookmarked' : ''}`}
+              onClick={(e) => {
+                e.stopPropagation(); // Prevent click from triggering job card click
+                onBookmark(filteredJobs[currentIndex]);
+                setNotification(isBookmarked(filteredJobs[currentIndex].id) ? 'Removed from bookmarks!' : 'Saved successfully!'); // Set notification message
+                setTimeout(() => setNotification(''), 3000); // Clear notification after 3 seconds
+              }}
+            >
+              {isBookmarked(filteredJobs[currentIndex].id) ? 'Bookmarked' : 'Bookmark'}
+            </button>
+            <Link to={`/jobs/${filteredJobs[currentIndex].id}`} className="view-details-btn">View Details</Link>
+          </div>
+        )}
       </div>
       <div className="job-cards-container">
         {filteredJobs.length > 0 && filteredJobs.map((job, index) => (
           index !== currentIndex && (
             <div 
               className="job-card collapsed" 
-              key={job.id} 
-              onClick={() => handleJobCardClick(index)} // Set clicked job as current
+              key={job.id}
             >
               <h2>{job.title}</h2>
               <div className="job-details">
@@ -156,10 +149,10 @@ const Jobs = ({ onBookmark, bookmarks = [], searchQuery }) => {
               >
                 {isBookmarked(job.id) ? 'Bookmarked' : 'Bookmark'}
               </button>
+              <Link to={`/jobs/${job.id}`} className="view-details-btn">View Details</Link>
             </div>
           )
         ))}
-
       </div>
       {loading && <p className="loading-text">Loading...</p>}
       {!loading && hasMore && (
@@ -180,11 +173,3 @@ const Jobs = ({ onBookmark, bookmarks = [], searchQuery }) => {
 };
 
 export default Jobs;
-
-
-
-
-
-
-
-
